@@ -2,6 +2,10 @@ import java.io.Serializable;
 
 
 public class Persona implements Serializable {
+	private Integer id;
+	private String nome;
+	private String datanascita;
+	private String datamorte;
 
 	public String getNome() {
 		return nome;
@@ -22,10 +26,7 @@ public class Persona implements Serializable {
 		this.datamorte = datamorte;
 	}
 	private static final long serialVersionUID = 1L;
-	private Integer id;
-	private String nome;
-	private String datanascita;
-	private String datamorte;
+	
 	public Integer getId() {
 		return id;
 	}
