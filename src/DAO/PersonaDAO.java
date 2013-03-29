@@ -1,6 +1,9 @@
+package DAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.Persona;
 
 public class PersonaDAO extends DAO<Persona, Integer> {
 
@@ -14,7 +17,7 @@ public class PersonaDAO extends DAO<Persona, Integer> {
 		Persona persona = null;
 		try {
 			openConnection();
-			String querystring = "SELECT * FROM " + "persona";
+			String querystring = "SELECT * FROM " + tableName;
 
 			ptmt = getConnection().prepareStatement(querystring);
 			rs = ptmt.executeQuery();

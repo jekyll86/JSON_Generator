@@ -1,6 +1,9 @@
+package DAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.Arma;
 
 public class ArmaDAO extends DAO<Arma, Integer> {
 

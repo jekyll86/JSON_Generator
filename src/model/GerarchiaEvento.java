@@ -1,7 +1,8 @@
+package model;
 import java.io.Serializable;
 
 
-public class GerarchiaGruppoOrganizzato implements Serializable{
+public class GerarchiaEvento implements Serializable{
 
 	/**
 	 * 
@@ -36,6 +37,5 @@ public class GerarchiaGruppoOrganizzato implements Serializable{
 	public void setProfondita(Integer profondita) {
 		this.profondita = profondita;
 	}
-	
 
 }

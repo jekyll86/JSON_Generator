@@ -1,6 +1,14 @@
+package GSON;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+
+import model.Arma;
+import model.Persona;
+
+import DAO.ArmaDAO;
+import DAO.PersonaDAO;
 
 import com.google.gson.Gson;
 
@@ -9,14 +17,11 @@ public class PersonaGSON {
 	public static void main(String[] args) {
 
 		PersonaDAO userDAO = new PersonaDAO(Persona.class);
-		ArmaDAO armaDAO = new ArmaDAO(Arma.class);
-		// User u = new User();
-		List<Persona> users = null;
-		List<Arma> arme = null;
-		try {
 
+		List<Persona> users = null;
+
+		try {
 			users = userDAO.findAll();
-			arme = armaDAO.findAll();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -24,9 +29,7 @@ public class PersonaGSON {
 
 		Gson gson = new Gson();
 		String usersJson = gson.toJson(users);
-		String armeJson = gson.toJson(arme);
-		System.out.println(usersJson);
-		System.out.println(armeJson);
+		System.out.println(usersJson);	
 
 		try {
 			FileWriter writer = new FileWriter("users.json");
@@ -35,14 +38,8 @@ public class PersonaGSON {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		try {
-			FileWriter writer1 = new FileWriter("arme.json");
-			writer1.write(armeJson);
-			writer1.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
+	
 
 	}
 }
