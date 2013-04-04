@@ -57,5 +57,17 @@ public class ArmaDAO extends DAO<Arma, Integer> {
 		}
 
 	}
+
+	@Override
+	public void add(Arma objectBean) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Arma objectBean) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
 }
 

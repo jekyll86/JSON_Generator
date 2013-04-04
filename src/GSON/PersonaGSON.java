@@ -4,10 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-import model.Arma;
 import model.Persona;
-
-import DAO.ArmaDAO;
 import DAO.PersonaDAO;
 
 import com.google.gson.Gson;
@@ -26,6 +23,9 @@ public class PersonaGSON {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		for (Persona persona : users)
+			persona.setImage("datatable/images/user-icon1.jpg");
 
 		Gson gson = new Gson();
 		String usersJson = gson.toJson(users);

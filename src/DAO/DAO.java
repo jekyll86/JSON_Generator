@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-
 public abstract class DAO<T, K> {
 
 	protected final String dbName = "synthesys";
@@ -32,9 +31,9 @@ public abstract class DAO<T, K> {
 
 	//public abstract void create() throws SQLException;
 
-	//public abstract void add(T objectBean) throws SQLException;
+	public abstract void add(T objectBean) throws SQLException;
 
-	//public abstract void update(T objectBean) throws SQLException;
+	public abstract void update(T objectBean) throws SQLException;
 
 	//public abstract void delete(K id) throws SQLException;
 
@@ -76,6 +75,15 @@ public abstract class DAO<T, K> {
 
 	public void setConnection(Connection connection) {
 		this.connection = connection;
+	}
+	
+	public void overwrite(T objectBean) throws SQLException {
+		try {
+			add(objectBean);
+		} catch (SQLException e) {
+			update(objectBean);
+		}
+		
 	}
 
 }

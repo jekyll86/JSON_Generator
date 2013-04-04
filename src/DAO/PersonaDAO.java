@@ -1,4 +1,5 @@
 package DAO;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +26,8 @@ public class PersonaDAO extends DAO<Persona, Integer> {
 				persona = new Persona();
 				persona.setId(rs.getInt(1));
 				persona.setNome(rs.getString(2));
-				persona.setDatanascita(rs.getString(3));
-				persona.setDatamorte(rs.getString(4));
+				persona.setDatanascita(rs.getInt(3));
+				persona.setDatamorte(rs.getInt(4));
 				persone.add(persona);
 			}
 		} catch (SQLException e) {
@@ -38,24 +39,49 @@ public class PersonaDAO extends DAO<Persona, Integer> {
 		return persone;
 	}
 
-	
-	public Integer generateId() throws SQLException {
-		return null;
+	public void update(Persona objectBean) throws SQLException {
+		try {
+			openConnection();
 
+			String querystring = "UPDATE " + tableName + " SET "
+					+ "ID=?,NOME=?," + "DATANASCITA=?,DATAMORTE=? WHERE ID=?";
+
+			ptmt = getConnection().prepareStatement(querystring);
+			ptmt.setInt(1, objectBean.getId());
+			ptmt.setString(2, objectBean.getNome());
+			ptmt.setInt(3, objectBean.getDatanascita());
+			ptmt.setInt(4, objectBean.getDatamorte());
+			ptmt.setInt(5, objectBean.getId());
+
+			ptmt.executeUpdate();
+
+		} catch (SQLException e) {
+			throw new SQLException(e.getMessage());
+		} finally {
+			closeConnection();
+		}
 	}
 
 	public static void main(String[] args) {
 
-		PersonaDAO userDAO = new PersonaDAO(Persona.class);
-		// User u = new User();
+		PersonaDAO personaDAO = new PersonaDAO(Persona.class);
+		Persona p = new Persona();
+		p.setId(1);
+		p.setNome("cri1");
 
 		try {
-
-			System.out.print(userDAO.findAll());
+			personaDAO.update(p);
+			System.out.print(personaDAO.findAll());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
+	}
+
+	@Override
+	public void add(Persona objectBean) throws SQLException {
+		// TODO Auto-generated method stub
+		
 	}
 }

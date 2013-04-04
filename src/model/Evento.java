@@ -12,8 +12,8 @@ public class Evento implements Serializable{
 	private Integer id;
 	private Integer startTime;
 	private Integer endTime;
-	private float lat;
-	private float lon;
+	private Double lat;
+	private Double lon;
 	private Integer idEventType;
 	public Integer getId() {
 		return id;
@@ -33,17 +33,17 @@ public class Evento implements Serializable{
 	public void setEndTime(Integer endTime) {
 		this.endTime = endTime;
 	}
-	public float getLat() {
+	public double getLat() {
 		return lat;
 	}
-	public void setLat(float lat) {
-		this.lat = lat;
+	public void setLat(double d) {
+		this.lat = d;
 	}
-	public float getLon() {
+	public double getLon() {
 		return lon;
 	}
-	public void setLon(float lon) {
-		this.lon = lon;
+	public void setLon(double d) {
+		this.lon = d;
 	}
 	public Integer getIdEventType() {
 		return idEventType;

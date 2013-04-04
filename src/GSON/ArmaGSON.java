@@ -26,7 +26,7 @@ public class ArmaGSON {
 		System.out.println(armiJson);
 		
 		try {
-			FileWriter writer1 = new FileWriter("arme.json");
+			FileWriter writer1 = new FileWriter("armi.json");
 			writer1.write(armiJson);
 			writer1.close();
 		} catch (IOException e) {

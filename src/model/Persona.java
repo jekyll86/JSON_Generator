@@ -5,8 +5,10 @@ import java.io.Serializable;
 public class Persona implements Serializable {
 	private Integer id;
 	private String nome;
-	private String datanascita;
-	private String datamorte;
+	private int datanascita;
+	private int datamorte;
+	private String image;
+	
 
 	public String getNome() {
 		return nome;
@@ -14,16 +16,16 @@ public class Persona implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getDatanascita() {
+	public int getDatanascita() {
 		return datanascita;
 	}
-	public void setDatanascita(String datanascita) {
+	public void setDatanascita(int datanascita) {
 		this.datanascita = datanascita;
 	}
-	public String getDatamorte() {
+	public int getDatamorte() {
 		return datamorte;
 	}
-	public void setDatamorte(String datamorte) {
+	public void setDatamorte(int datamorte) {
 		this.datamorte = datamorte;
 	}
 	private static final long serialVersionUID = 1L;
@@ -33,6 +35,12 @@ public class Persona implements Serializable {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	

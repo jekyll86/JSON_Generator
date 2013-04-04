@@ -11,6 +11,11 @@ public class PersonaPartecipante implements Serializable{
 	
 	private Integer id;
 	private Integer idEvento;
+	private Integer idPersona;
+	private Integer idTipoRuolo;
+	private Integer idPericolosita;
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -41,8 +46,6 @@ public class PersonaPartecipante implements Serializable{
 	public void setIdPericolosita(Integer idPericolosita) {
 		this.idPericolosita = idPericolosita;
 	}
-	private Integer idPersona;
-	private Integer idTipoRuolo;
-	private Integer idPericolosita;
+	
 
 }
