@@ -25,7 +25,7 @@ public class PersonaGSON {
 		}
 		
 		for (Persona persona : users)
-			persona.setImage("datatable/images/user-icon1.jpg");
+			persona.setImmagine("table/images/user-icon.jpg");
 
 		Gson gson = new Gson();
 		String usersJson = gson.toJson(users);

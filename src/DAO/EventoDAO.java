@@ -25,9 +25,9 @@ public class EventoDAO extends DAO<Evento, Integer> {
 			rs = ptmt.executeQuery();
 			while (rs.next()) {
 				evento = new Evento();
-				evento.setId(rs.getInt(1));
-				evento.setStartTime(rs.getInt(2));
-				evento.setEndTime(rs.getInt(3));
+				evento.setIdEvento(rs.getInt(1));
+				//evento.setStartTime(rs.getInt(2));
+				//evento.setEndTime(rs.getInt(3));
 				evento.setLat(rs.getDouble(4));
 				evento.setLon(rs.getDouble(5));
 				persone.add(evento);
@@ -50,14 +50,14 @@ public class EventoDAO extends DAO<Evento, Integer> {
 					+ "FINETEMPO=?,COORDX=?,COORDY=?,IDTIPOEVENTO=? WHERE ID=?";
 
 			ptmt = getConnection().prepareStatement(querystring);
-			ptmt.setInt(1, evento.getId());
-			ptmt.setInt(2, evento.getStartTime());
-			ptmt.setInt(3, evento.getEndTime());
+			ptmt.setInt(1, evento.getIdEvento());
+			//ptmt.setInt(2, evento.getStart());
+			//ptmt.setInt(3, evento.getEnd());
 			ptmt.setDouble(4, evento.getLat());
 			ptmt.setDouble(5, evento.getLon());
 			ptmt.setInt(6, evento.getIdEventType());
 
-			ptmt.setInt(7, evento.getId());
+			ptmt.setInt(7, evento.getIdEvento());
 
 			ptmt.executeUpdate();
 
@@ -78,9 +78,9 @@ public class EventoDAO extends DAO<Evento, Integer> {
 					+ " VALUES(?,?,?,?,?,?)";
 
 			ptmt = getConnection().prepareStatement(querystring);
-			ptmt.setInt(1, evento.getId());
-			ptmt.setInt(2, evento.getStartTime());
-			ptmt.setInt(3, evento.getEndTime());
+			ptmt.setInt(1, evento.getIdEvento());
+			//ptmt.setInt(2, evento.getStartTime());
+			//ptmt.setInt(3, evento.getEndTime());
 			ptmt.setDouble(4, evento.getLat());
 			ptmt.setDouble(5, evento.getLon());
 			ptmt.setInt(6, evento.getIdEventType());
@@ -101,9 +101,9 @@ public class EventoDAO extends DAO<Evento, Integer> {
 		EventoDAO eventoDAO = new EventoDAO(Evento.class);
 
 		Evento evento = new Evento();
-		evento.setId(2);
-		evento.setStartTime(10);
-		evento.setEndTime(30);
+		evento.setIdEvento(2);
+		//evento.setStartTime(10);
+		//evento.setEndTime(30);
 		evento.setLat(10.20);
 		evento.setLon(30.1);
 		evento.setIdEventType(10);

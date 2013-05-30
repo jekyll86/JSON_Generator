@@ -7,7 +7,7 @@ public class Persona implements Serializable {
 	private String nome;
 	private int datanascita;
 	private int datamorte;
-	private String image;
+	private String immagine;
 	
 
 	public String getNome() {
@@ -36,11 +36,11 @@ public class Persona implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getImage() {
-		return image;
+	public String getImmagine() {
+		return immagine;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setImmagine(String image) {
+		this.immagine = image;
 	}
 
 	

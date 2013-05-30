@@ -31,6 +31,10 @@ public abstract class DAO<T, K> {
 
 	//public abstract void create() throws SQLException;
 
+	public DAO(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public abstract void add(T objectBean) throws SQLException;
 
 	public abstract void update(T objectBean) throws SQLException;

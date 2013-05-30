@@ -20,9 +20,9 @@ public class PersonaPartecipanteGSON {
 			PersonaPartecipante pp = new PersonaPartecipante();
 
 			pp.setId(i);
-			pp.setIdEvento((int) Math.round(Math.random() * 100));
+			pp.setIdEvento((int) Math.round(Math.random() * 20));
 			pp.setIdPersona((int) Math.round(Math.random() * 100));
-
+			
 			pp.setIdTipoRuolo(i);
 			pp.setIdPericolosita(i);
 			

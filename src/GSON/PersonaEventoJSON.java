@@ -20,9 +20,9 @@ public class PersonaEventoJSON {
 		for (int i = 0; i < 100; i++) {
 			Evento event = new Evento();
 
-			event.setId(i);
-			event.setStartTime(i + 10);
-			event.setEndTime(i + 20);
+			event.setIdEvento(i);
+			//event.setStartTime(i + 10);
+			//event.setEndTime(i + 20);
 
 			event.setLat(53.73 - 0.5 + Math.random() * 0.5);
 			event.setLon(-0.30 - 0.5 + Math.random() * 0.5);
